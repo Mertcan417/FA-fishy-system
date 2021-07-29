@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beheerder</title>
+</head>
+<body>
+<h1>Welkom Beheerder!</h1>
+<form onsubmit="event.preventDefault()" id="formData">
+    <label for="vn">Voornaam</label>
+    <input type="text" id="vn" placeholder="voornaam" value="Dochterlief"><br><br>
+    <label for="an">Achternaam</label>
+    <input type="text" id="an" placeholder="achternaam" value="Reenen"><br><br>
+    <button type="submit" onclick="verwijderEigenaar()">eigenaar verwijderen</button>
+    <br><br>
+    <button type="submit" onclick="overzichtEigenaar()">overzicht eigenaren</button>
+</form>
+
+
+<div id="eigenaaroverzicht"></div>
+</body>
+<script src="javascript/beheerder.js"></script>
+
+
+</html>

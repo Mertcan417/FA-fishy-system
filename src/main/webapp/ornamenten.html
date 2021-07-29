@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form onsubmit="event.preventDefault()" id="ornamentenBekijken">
+    <h3>ornamenten bekijken</h3>
+    <label>aquariumnaam</label>
+    <input type="text" id="aqonaam" placeholder="aquariumnaam"><br><br>
+    <button type="submit" id="ornamentenbekijkenknop" onclick="ornamentenBekijken()">ornamenten bekijken</button>
+    <input type="button" value="terug naar het hoofdmenu" onclick="window.location.href = 'eigenaar.html'">
+</form>
+
+<div id="ornamentenoverzichtveld"></div>
+
+</body>
+
+<script src="javascript/ornamenten.js"></script>
+</html>

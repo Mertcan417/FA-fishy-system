@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eigenaar</title>
+</head>
+<body>
+
+<div class="alert" id="alert"></div>
+<h1>Welkom eigenaar!</h1>
+<form onsubmit="event.preventDefault()">
+    <h3>Kies onderwerp</h3>
+    <input type="button" value="aquarium" onclick="window.location.href = 'aquarium.html';">
+    <input type="button" value="bewoner" onclick="window.location.href = 'bewoner.html';">
+    <input type="button" value="toebehoren" onclick="window.location.href= 'toebehoren.html';">
+    <input type="button" value="ornamenten" onclick="window.location.href= 'ornamenten.html';">
+    <button type="submit" onclick="uitloggen()">uitloggen</button>
+    <button type="submit" onclick="securecheck()">niet voor eigenaren bedoeld</button>
+</form>
+</body>
+<script src="javascript/eigenaar.js"></script>
+<script>
+    function uitloggen(){
+        sessionStorage.clear();
+        localStorage.clear();
+        window.location.href = 'login.html';
+    }
+</script>
+</html>

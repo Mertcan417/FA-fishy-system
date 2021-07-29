@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+</head>
+<body>
+
+<form onsubmit="event.preventDefault()" id="formData">
+    <h1>Maak hier uw account aan!</h1>
+    <label for="vn">voornaam</label>
+    <input type="text" id="vn" name="voornaam" placeholder="voer hier u voornaam in!"><br><br>
+    <label for="an">achternaam</label>
+    <input type="text" id="an" name="achternaam" placeholder="voer hier u achternaam in!"><br><br>
+    <button type="submit" onclick="aanmaken()">Account aanmaken</button>
+    <input type="submit" value="Nog geen account?" onclick="window.location.href = 'login.html'">
+</form>
+
+</body>
+<script src="javascript/maak_account.js"></script>
+</html>

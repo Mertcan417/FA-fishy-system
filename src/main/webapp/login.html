@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<form onsubmit="event.preventDefault()" id="formData">
+    <h1>Login</h1>
+    <label for="vn">voornaam</label>
+    <input type="text" id="vn" name="voornaam" placeholder="voer hier u voornaam in!"><br><br>
+    <label for="an">achternaam</label>
+    <input type="text" id="an" name="achternaam" placeholder="voer hier u achternaam in!"><br><br>
+    <label for="ww">wachtwoord</label>
+    <input type="password" id="ww" name="wachtwoord" placeholder="voer hier u wachtwoord in!"><br><br>
+    <button type="submit" id="button" onclick="login()">Login</button>
+    <input type="button" value="maak account" onclick="window.location.href='maak_account.html'">
+</form>
+
+</body>
+<script src="javascript/login.js"></script>
+</html>

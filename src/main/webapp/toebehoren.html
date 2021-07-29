@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form onsubmit="event.preventDefault()" id="toebehorenToevoegen">
+    <h3>toebehoren toevoegen</h3>
+    <label>model</label>
+    <input type="text" id="mdl" name="model" placeholder="model"><br><br>
+    <label>serienummer</label>
+    <input type="text" id="srn" name="serienummer" placeholder="serienummer"><br><br>
+    <label>omschrijving</label>
+    <input type="text" id="os" name="omschrijving" placeholder="omschrijving"><br><br>
+    <button type="submit" id="toebehorentoevoegenknop" onclick="toebehorenToevoegen()">toebehoren toevoegen</button>
+</form>
+
+<form onsubmit="event.preventDefault()" id="toebehorenBekijken">
+    <h3>toebehoren bekijken</h3>
+    <button type="submit" id="toebehorenbekijkenknop" onclick="toebehorenBekijken()">toebehoren bekijken</button>
+</form>
+<div id="toebehorenbekijkenveld">hier komt de overzicht te staan!</div>
+<input type="button" value="terug naar het hoofdmenu" onclick="window.location.href = 'eigenaar.html'">
+</body>
+
+
+<script src="javascript/toebehoren.js"></script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form onsubmit="event.preventDefault()" id="aquariumZoeken">
+    <h3>Aquarium overzicht</h3>
+    <button type="submit" id="aquariumoverzichtknop" onclick="getAquariumOverzicht()">Krijg overzicht</button>
+</form>
+<div id="aquariumoverzichtveld">
+    Op dit veld zal er overzicht van de aquaria vertoond worden!
+</div>
+<form onsubmit="event.preventDefault()" id="aquariumToevoegen">
+    <h3>Aquarium toevoegen</h3>
+    <label>naam</label>
+    <input type="text" id="aquariumnaam" name="naam" placeholder="naam"><br><br>
+    <label>lengte</label>
+    <input type="number" id="lengte" name="lengte" placeholder="lengte"><br><br>
+    <label>breedte</label>
+    <input type="number" id="breedte" name="breedte" placeholder="breedte"><br><br>
+    <label>hoogte</label>
+    <input type="number" id="hoogte" name="hoogte" placeholder="hoogte"><br><br>
+    <label>bodemsoort</label>
+    <input type="text" id="bodemsoort" name="bodemSoort" placeholder="bodemsoort"><br><br>
+    <label>watersoort</label>
+    <input type="text" id="watersoort" name="waterSoort" placeholder="watersoort"><br><br>
+    <button type="submit" id="aquariumtoevoegenbutton" onclick="aquariumToevoegen()">Aquarium toevoegen</button>
+</form>
+
+<form onsubmit="event.preventDefault()" id="aquariumVerwijderen">
+    <h3>Aquarium verwijderen</h3>
+    <label>naam</label>
+    <input type="text" id="aquanaam" name="naam" placeholder="naam"><br><br>
+    <button type="submit" id="aquariumverwijderenbutton" onclick="aquariumVerwijderen()">aquarium verwijderen</button>
+    <input type="button" value="terug naar het hoofdmenu" onclick="window.location.href = 'eigenaar.html'">
+</form>
+</body>
+
+<script src="javascript/aquarium.js"></script>
+</html>
