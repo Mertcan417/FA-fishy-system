@@ -84,10 +84,11 @@ public class Aquarium implements Serializable {
     }
 
     public void setLengte(int lt) throws Exception {
-        if (lt <= 0) {
-            throw new Exception("lengte moet groter zijn dan nul!");
-        }
         lengte = lt;
+        if (lt <= 0) {
+            lengte = 0;
+            //throw new Exception("lengte moet groter zijn dan nul!");
+        }
     }
 
     public int getBreedte() {
@@ -95,10 +96,11 @@ public class Aquarium implements Serializable {
     }
 
     public void setBreedte(int bt) throws Exception {
-        if (bt <= 0) {
-            throw new Exception("breedte moet groter zijn dan nul!");
-        }
         breedte = bt;
+        if (bt <= 0) {
+            breedte = 0;
+            //throw new Exception("breedte moet groter zijn dan nul!");
+        }
     }
 
     public int getHoogte() {
@@ -106,10 +108,11 @@ public class Aquarium implements Serializable {
     }
 
     public void setHoogte(int ht) throws Exception {
-        if (ht <= 0) {
-            throw new Exception("hoogte moet groter zijn dan nul!");
-        }
         hoogte = ht;
+        if (ht <= 0) {
+            hoogte = 0;
+//            throw new Exception("hoogte moet groter zijn dan nul!");
+        }
     }
 
     public String getBodemSoort() {
