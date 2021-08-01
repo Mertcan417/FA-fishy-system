@@ -22,40 +22,53 @@ class EigenaarTest {
     }
 
     @Test
-    void getNaamTest(){
-        assertEquals("kees",eig1.getVoornaam());
+    void getVoornaamTest() {
+        assertEquals("kees", eig1.getVoornaam());
     }
 
     @Test
-    void setNaamTest(){
-        eig2.setVoornaam("Peet");
-        assertEquals("Peet", eig2.getVoornaam());
+    void setVoornaamTest() {
+        eig1.setVoornaam("Peet");
+        assertEquals("Peet", eig1.getVoornaam());
     }
+
+    @Test
+    void getAchternaamTest() {
+        assertEquals("Lad", eig2.getAchternaam());
+    }
+
+    @Test
+    void setAchternaamTest() {
+        eig2.setAchternaam("Petertje");
+        assertEquals("Petertje", eig2.getAchternaam());
+    }
+
 
     @Test
     void validateEigenaarTest() throws Exception {
         AquariumManager.voegEigenaarToe(eig2);
         boolean res = Eigenaar.validateEigenaar(eig2.getVoornaam(), eig2.getAchternaam());
-        assertEquals(true,res);
+        assertTrue(res);
     }
 
     @Test
     void roleValidationEigenaarTest() {
-        String role = Eigenaar.roleValidationEigenaar("Merlin","Karin", "wachtwoord");
+        String role = Eigenaar.roleValidationEigenaar("Merlin", "Karin", "wachtwoord");
         assertEquals("user", role);
     }
 
     @Test
-    void getEigenaarTest() throws Exception{
+    void getEigenaarTest() throws Exception {
         AquariumManager.voegEigenaarToe(eig3);
         Eigenaar eigenaar = Eigenaar.getEigenaar("Merlin", "Karin");
-        assertEquals(eig3,eigenaar);
+        assertEquals(eig3, eigenaar);
     }
 
     @Test
-    void getAquariumTest() throws Exception{
-        Aquarium aq = new Aquarium("aq0", 2,3,4,"koraal", "zoet");
+    void getAquariumTest() throws Exception {
+        Aquarium aq = new Aquarium("aq0", 2, 3, 4, "koraal", "zoet");
         eig3.voegAquariumToe(aq);
-        assertEquals(aq,eig3.getAquariumByName("aq0"));
+        assertEquals(aq, eig3.getAquariumByName("aq0"));
     }
+
 }

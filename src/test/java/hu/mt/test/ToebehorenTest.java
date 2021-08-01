@@ -11,28 +11,39 @@ class ToebehorenTest {
     private Toebehoren tbh1;
 
     @BeforeEach
-    public void init(){
+    public void init() {
         tbh1 = new Toebehoren("Octopusje", 1245, "blauw en knapperig");
     }
 
     @Test
-    void getNaamTest(){
+    void getModelTest() {
         assertEquals("Octopusje", tbh1.getModel());
     }
 
     @Test
-    void setNaamTest(){
+    void setModelTest() {
         tbh1.setModel("Karino");
         assertEquals("Karino", tbh1.getModel());
     }
 
     @Test
-    void getOmschrijvingTest(){
+    void getSerienummerTest() {
+        assertEquals(1245, tbh1.getSerienummer());
+    }
+
+    @Test
+    void setSerienummerTest() {
+        tbh1.setSerienummer(1912);
+        assertEquals(1912, tbh1.getSerienummer());
+    }
+
+    @Test
+    void getOmschrijvingTest() {
         assertEquals("blauw en knapperig", tbh1.getOmschrijving());
     }
 
     @Test
-    void setOmschrijvingTest(){
+    void setOmschrijvingTest() {
         tbh1.setOmschrijving("rose en groot");
         assertEquals("rose en groot", tbh1.getOmschrijving());
     }

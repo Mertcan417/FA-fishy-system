@@ -55,10 +55,11 @@ public class Aquarium implements Serializable {
     }
 
     public void voegBewonerToe(Bewoner bwn) {
+
         for (Bewoner bewoner : bewoners) {
             if (bewoner.getSoortnaam().equals(bwn.getSoortnaam()) && bewoner.getKleurnaam().equals(bwn.getKleurnaam())) {
-                int aantal = bewoner.getAantal();
-                bewoner.setAantal(aantal + 1);
+                int bewonerAantal = bewoner.getAantal();
+                bewoner.setAantal(bewonerAantal + bwn.getAantal());
             }
         }
         bewoners.add(bwn);

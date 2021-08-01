@@ -27,6 +27,58 @@ class AquariumTest {
         aq1.setNaam("haai");
         assertEquals("haai", aq1.getNaam());
     }
+    @Test
+    void getLengteTest() {
+        assertEquals(1, aq1.getLengte());
+    }
+
+    @Test
+    void setLengteTest() throws Exception{
+        aq1.setLengte(4);
+        assertEquals(4, aq1.getLengte());
+    }
+    @Test
+    void getBreedteTest() {
+        assertEquals(3, aq1.getBreedte());
+    }
+
+    @Test
+    void setBreedteTest() throws Exception{
+        aq1.setBreedte(6);
+        assertEquals(6, aq1.getBreedte());
+    }
+    @Test
+    void getHoogteTest() {
+        assertEquals(2, aq1.getHoogte());
+    }
+
+    @Test
+    void setHoogteTest() throws Exception{
+        aq1.setHoogte(9);
+        assertEquals(9, aq1.getHoogte());
+    }
+
+    @Test
+    void getBodemSoortTest() {
+        assertEquals("koraal", aq1.getBodemSoort());
+    }
+
+    @Test
+    void setBodemSoortTest() {
+        aq1.setBodemSoort("gras");
+        assertEquals("gras", aq1.getBodemSoort());
+    }
+    @Test
+    void getWaterSoortTest() {
+        assertEquals("zoet", aq1.getWaterSoort());
+    }
+
+    @Test
+    void setWaterSoortTest() {
+        aq1.setWaterSoort("zout");
+        assertEquals("zout", aq1.getWaterSoort());
+    }
+
 
     @Test
     void negatieveGetallenTest() throws Exception {

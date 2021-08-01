@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class PersistenceManager {
     //azure configuratie van gegevens
     private static String ENDPOINT = "https://backendpracticum.blob.core.windows.net/";
-    private static String SAS_TOKEN = "?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacuptfx&se=2021-09-22T08:47:59Z&st=2021-07-26T00:47:59Z&spr=https,http&sig=86qtepStUz4p2N%2FlQLuovIF4vLMqmd61iDy1CmesOAA%3D";
-    private static String CONTAINER = "usercontainer";
+    private static String SAS_TOKEN = "?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacuptfx&se=2024-01-11T22:40:57Z&st=2021-07-31T13:40:57Z&spr=https,http&sig=lcb5NLg5OaZkc1sbrJlOL1q4JWbccmzN5kYR6SoGqzM%3D";
+    private static String CONTAINER = "container";
 
     //nieuwe container object
     private static BlobContainerClient blobContainerClient = new BlobContainerClientBuilder()
