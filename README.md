@@ -10,13 +10,14 @@ De beheerder kan net iets meer dan de gebruiker, dat kan men opmerken door als e
 Een geimplementeerde dummy data wat als accounts gebruikt kan worden is het volgende:
 
 (LET OP: Dit zijn bestaande accounts, dus maak gebruik van het login scherm)
+
 rolnaam: "user"
 voornaam: Zoonlief
 achternaam: Reenen
 wachtwoord: wachtwoord
 
 rolnaam: "user"
-voornaam: Zoonlief
+voornaam: Dochterlief
 achternaam: Reenen
 wachtwoord: wachtwoord
 
