@@ -5,25 +5,23 @@ function getAquariumOverzicht() {
 
     overzicht.innerHTML = "";
 
-    (async () => {
-        const response = await fetch("rest/eigenaar/aquarium/" + voornaam + "/" + achternaam, {
-            method: "GET"
-        });
-
-        if (response.status === 200) {
-            let data = await response.json();
-            console.log(data);
-            let ul = document.createElement('ul')
-            ul.setAttribute('id', 'aquarium');
-            data.forEach(function (item) {
-                const li = document.createElement('li');
-                li.innerHTML = "aquariumnaam: " + item.naam + "  lengte: " + item.lengte + "  breedte: " + item.breedte + "  hoogte: "
-                    + item.hoogte + "  bodemsoort: " + item.bodemSoort + "  watersoort: " + item.waterSoort;
-                ul.appendChild(li);
-            });
-            overzicht.appendChild(ul);
+    fetch("rest/eigenaar/aquarium/" + voornaam + "/" + achternaam, {
+        method: "GET"
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
         }
-    })();
+    }).then(data => {
+        let ul = document.createElement('ul')
+        ul.setAttribute('id', 'aquarium');
+        data.forEach((item) => {
+            const li = document.createElement('li');
+            li.innerHTML = "aquariumnaam: " + item.naam + "  lengte: " + item.lengte + "  breedte: " + item.breedte + "  hoogte: "
+                + item.hoogte + "  bodemsoort: " + item.bodemSoort + "  watersoort: " + item.waterSoort;
+            ul.appendChild(li);
+        });
+        overzicht.appendChild(ul);
+    }).catch(error => error);
 }
 
 function aquariumToevoegen() {
@@ -39,22 +37,23 @@ function aquariumToevoegen() {
     let bs = document.querySelector("#bodemsoort").value;
     let ws = document.querySelector("#watersoort").value;
 
-    (async () => {
-        let response = await fetch("rest/eigenaar/aquariumtoevoegen/" + voornaam + "/" + achternaam, {
+    if (an.length <= 2 || lt === "" || lt === 0 || bt === "" || bt === 0 || ht === "" || ht === 0 || bs.length <= 2 || ws.length <= 2) {
+        window.alert("Niet alle velden zijn volledig ingevoerd!");
+    } else {
+        fetch("rest/eigenaar/aquariumtoevoegen/" + voornaam + "/" + achternaam, {
             method: "PUT",
             body: encData
-        });
+        })
+            .then(response => {
+                if (response.ok) {
+                    window.alert("aquarium is succesvol toegevoegd!");
+                } else {
+                    window.alert("aquariumnaam bestaat al!");
+                }
+            })
+            .catch(error => error)
 
-        if (an.length <= 2 || lt === "" || lt === 0 || bt === "" || bt === 0 || ht === "" || ht === 0 || bs.lengte <= 2 || ws.lengte <= 2) {
-            window.alert("Niet alle velden zijn volledig ingevoerd!");
-        } else if (response.ok) {
-            let data = await response.json();
-            console.log(data);
-            window.alert("aquarium is succesvol toegevoegd!");
-        } else {
-            window.alert("aquarium is niet succesvol toegevoegd/aquarium naam bestaat al!");
-        }
-    })();
+    }
 }
 
 function aquariumVerwijderen() {
@@ -64,22 +63,21 @@ function aquariumVerwijderen() {
     let formData = new FormData(document.querySelector("#aquariumVerwijderen"));
     let encData = new URLSearchParams(formData.entries());
 
-    (async () => {
-
-        let response = await fetch("rest/eigenaar/aquariumverwijderen/" + voornaam + "/" + achternaam, {
+    if (aquariumnaam.length <= 2) {
+        window.alert("Vul het tekstveld volledig in/aquariumnaam is te kort!");
+    }
+    else {
+        fetch("rest/eigenaar/aquariumverwijderen/" + voornaam + "/" + achternaam, {
             method: "DELETE",
             body: encData
-        });
-
-        if (aquariumnaam.length <= 2) {
-            window.alert("Vul het tekstveld volledig in!");
-        } else if (response.ok) {
-            let data = await response.json();
-            console.log(data);
-            window.alert("aquarium is succesvol verwijderd!");
-        } else {
-            window.alert("aquarium bestaat niet!");
-        }
-
-    })();
+        }).then(response => {
+            if (response.ok) {
+                window.alert("aquarium is succesvol verwijderd!");
+                return response.json();
+            } else {
+                window.alert("aquarium bestaat niet!");
+            }
+        })
+            .catch(error => error);
+    }
 }

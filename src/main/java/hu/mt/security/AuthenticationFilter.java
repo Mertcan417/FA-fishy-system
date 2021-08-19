@@ -36,10 +36,16 @@ public class AuthenticationFilter implements ContainerRequestFilter {
 
                 String user = claims.getSubject();
                 System.out.println(user);
-                msc = new MySecurityContext(Eigenaar.getEigenaar("rik", "hik"), scheme);
+                String vn = user.substring(0,user.indexOf(" "));
+                System.out.println(vn);
+                String an = user.substring(user.indexOf(" ") + 1, user.length() - 1 + 1);
+                System.out.println(an);
 
+                msc = new MySecurityContext(Eigenaar.getEigenaar(vn, an), scheme);
+//                msc = new MySecurityContext(Eigenaar.getEigenaar("rik", "hik"), scheme);
+                //voornaam achternaam check user ^^
             } catch (JwtException | IllegalArgumentException e) {
-                System.out.println("Invalid JWT, processing as guest!");
+//                System.out.println("Invalid JWT, processing as guest!");
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -60,6 +60,7 @@ public class Aquarium implements Serializable {
             if (bewoner.getSoortnaam().equals(bwn.getSoortnaam()) && bewoner.getKleurnaam().equals(bwn.getKleurnaam())) {
                 int bewonerAantal = bewoner.getAantal();
                 bewoner.setAantal(bewonerAantal + bwn.getAantal());
+                return;
             }
         }
         bewoners.add(bwn);
@@ -84,7 +85,7 @@ public class Aquarium implements Serializable {
         return lengte;
     }
 
-    public void setLengte(int lt) throws Exception {
+    public void setLengte(int lt)  {
         lengte = lt;
         if (lt <= 0) {
             lengte = 0;
@@ -96,7 +97,7 @@ public class Aquarium implements Serializable {
         return breedte;
     }
 
-    public void setBreedte(int bt) throws Exception {
+    public void setBreedte(int bt)  {
         breedte = bt;
         if (bt <= 0) {
             breedte = 0;
@@ -108,7 +109,7 @@ public class Aquarium implements Serializable {
         return hoogte;
     }
 
-    public void setHoogte(int ht) throws Exception {
+    public void setHoogte(int ht)  {
         hoogte = ht;
         if (ht <= 0) {
             hoogte = 0;

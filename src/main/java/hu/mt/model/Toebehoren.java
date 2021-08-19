@@ -14,8 +14,6 @@ public class Toebehoren implements Serializable {
         omschrijving = os;
     }
 
-
-
     public String getModel() {
         return model;
     }
